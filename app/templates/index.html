@@ -1,0 +1,54 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Sentiment Analyzer Tool</title>
+    <link href="../static/style.css" rel="stylesheet">
+    <script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
+</head>
+<body>
+    <div id="header">
+        <h1 id="header-text">Sentiment Analyzer</h1>
+    </div>
+    <div id="main">
+        <div id="results-wrapper">
+            <div id="results-header">
+                <h2 id="results-header-title">Results</h2>
+
+                <div class="star-rating" id="main-stars">
+                    <span class="star"></span>
+                    <span class="star"></span>
+                    <span class="star"></span>
+                    <span class="star"></span>
+                    <span class="star"></span>
+                </div>
+            </div>
+            <div id="prob-wrapper">
+                <label>Probability that review is within each category:</label>
+                <div class="info-container">
+                    <div class="info-icon">i</div>
+                    <div class="info-popup"> The section gives a breakdown of how the model scored the review.
+                        Each category (1 Star, 2 Stars, etc.) is given a probability ranking. This ranking is then used
+                        to determine the final predicted rating which is the category with the highest probability.  </div>
+                </div>
+                <div id="prob-list"></div>
+                <div id="prob-chart-wrapper">
+                    <canvas id="prob-chart"></canvas>
+                </div>
+            </div>
+        </div>
+        <div id="review-input-wrapper">
+            <div>
+                <h2>Review</h2>
+            </div>
+            <label for="review-input-area"></label>
+            <textarea id="review-input-area" cols="50" rows="10" placeholder="Enter review here..."></textarea>
+            <button id="submit-button" onclick="onPredictionSubmit()">Predict</button>
+
+        </div>
+
+    </div>
+
+    <script src="../static/index.js"></script>
+</body>
+</html>
